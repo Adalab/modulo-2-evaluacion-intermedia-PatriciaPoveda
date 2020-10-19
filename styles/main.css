@@ -1,26 +1,52 @@
-.allbox {
-  display: flex;
-  flex-direction: column;
+* {
   color: gray;
 }
-.number {
-  width: 300px;
-  height: 25px;
+.title {
+  font-size: 40px;
 }
-.btn {
+.game {
+  display: flex;
+  flex-direction: column;
+}
+.game__title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.game__number {
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: rgb(233, 229, 229);
+  border: 0;
+  outline: 0;
+  padding-left: 5px;
+  font-size: 16px;
+}
+.game__number::placeholder {
+  padding-left: 5px;
+  font-size: 16px;
+  color: rgb(175, 174, 174);
+}
+.game__btn {
   width: 70px;
   height: 30px;
-  background-color: aqua;
+  background-color: rgb(44, 209, 209);
   color: white;
   font-size: 16px;
   border: 0;
   border-radius: 5px;
   margin-top: 10px;
-  /* outline: 0; */
+  outline: 0;
 }
-.clue,
-.attempts {
-  border: grey solid 2px;
-  height: 25px;
+.game__btn:active {
+  background-color: rgb(17, 114, 114);
+}
+.text {
+  border: rgb(207, 205, 205) solid 2px;
+  height: 30px;
   width: 600px;
+  font-size: 18px;
+  padding-left: 10px;
+  font-weight: 600;
 }

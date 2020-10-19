@@ -7,13 +7,15 @@
   <title>Evaluación intermedia 2</title>
 </head>
 <body>
-  <main class="allbox">
-    <h1>Adivina el número</h1>
-    <h2>Introduce aquí el número:</h2>
-    <input class="number js-number" type="text" >
-    <input class="btn js-btn" type="button" value="Prueba">
-    <h3 class="clue js-clue">Escribe el número y dale a Prueba</h3>
-    <h3 class="attempts js-attempts">Número de intentos: 0</h3>
+  <main >
+    <h1 class="title">Adivina el número</h1>
+    <form action="" class="game">
+      <label for="number" class="game__title">Introduce aquí el número:</label>
+      <input id="number" class="game__number js-number" type="text" placeholder="Ej: 15">
+      <input class="game__btn js-btn" type="button" value="Prueba">
+    </form>
+    <p class="text js-clue">Pista: Escribe el número y dale a Prueba</p>
+    <p class="text js-attempts">Número de intentos: 0</p>
   </main>
   <script type="text/javascript" src="./js/main.js"></script>
 </body>

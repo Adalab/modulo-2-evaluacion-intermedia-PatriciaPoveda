@@ -11,21 +11,50 @@ const random = getRandomNumber(100);
 console.log(`Mi número aleatorio es ${random}`); 
 
 function guessNumber(){
-  const numberValue = numberEl.value ;
-  const realNumber = parseInt(numberValue);
-  console.log(realNumber);
-  
-  if (realNumber > random){
-    clueEl.innerHTML = "Demasiado alto";
+  const realNumber = parseInt(numberEl.value);
+
+ 
+  if (realNumber < 0){
+    writeClue ("El número debe estar entre 1 y 100");
   }
-  else if (realNumber < random){
-    clueEl.innerHTML = "Demasiado bajo";
-  }
-  else if (realNumber === random){
-    clueEl.innerHTML = "Has ganado, campeona";
+  else if (realNumber > 500){
+    writeClue ("Quo vadis?");
   }
   else if (realNumber > 100){
-    clueEl.innerHTML = "El número debe estar entre 1 y 100";
+    writeClue ("El número debe estar entre 1 y 100");
   }
+  else if (realNumber > random){
+    writeClue ("Demasiado alto");
+  }
+  else if (realNumber < random){
+    writeClue ("Demasiado bajo");
+  }
+  else if (realNumber === random){
+    writeClue ("Has ganado, campeona");
+  }
+  else  if (numberEl !== realNumber){
+    writeClue ("Introduce un numero");
+  }
+  NumbersAttempts ();
 }
+
+let attemptsMessage = 0;
+function NumbersAttempts (){
+     attemptsMessage++
+     attemptsEl.innerHTML = `Número de intentos: ${attemptsMessage}`;
+}
+
+function writeClue (clue){
+  clueEl.innerHTML = clue;
+}
+
 btnEl.addEventListener("click", guessNumber);
+
+
+// function pushIntro(){
+//   if(e.keyCode == 13){
+//   guessNumber();
+//   }
+// }
+
+// numberEl.addEventListener("keyup", pushIntro);
